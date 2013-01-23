@@ -2,7 +2,7 @@ PecuniaNunc::Application.routes.draw do
   root :to => 'subscribers#index'
   resources :subscribers
 
-
+  match 'subscribers/:id/send_email' => 'subscribers#send_email', :as => :send_email
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

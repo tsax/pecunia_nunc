@@ -1,3 +1,5 @@
+require 'kickstarter'
+
 class SubscribersController < ApplicationController
   # GET /subscribers
   # GET /subscribers.json
@@ -19,6 +21,18 @@ class SubscribersController < ApplicationController
       format.html # show.html.erb
       format.json { render json: @subscriber }
     end
+  end
+
+  def send_email
+    @subscriber = Subscriber.find(params[:id])
+    projects = Kickstarter.by_list(:ending_soon, :pages => 3)
+    t = Time.now.day 
+    projs = projects.select {|proj| proj.pledge_percent > 90.0 }
+    binding.pry
+    projz = projs.select {|proj| proj.exact_pledge_deadline.day == t }
+    binding.pry
+    SubscriberMailer.daily_email(@subscriber, projz).deliver
+    redirect_to subscribers_path, :status => 301
   end
 
   # GET /subscribers/new
