@@ -12,7 +12,7 @@ class SubscriberMailer < ActionMailer::Base
     @subscriber = subscriber
     @greeting = "Hi"
     @p = projs
-    binding.pry
+    # binding.pry
     mail to: @subscriber.email, subject: "Hola Senor(ita)"
   end
 end

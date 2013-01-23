@@ -28,9 +28,9 @@ class SubscribersController < ApplicationController
     projects = Kickstarter.by_list(:ending_soon, :pages => 3)
     t = Time.now.day 
     projs = projects.select {|proj| proj.pledge_percent > 90.0 }
-    binding.pry
-    projz = projs.select {|proj| proj.exact_pledge_deadline.day == t }
-    binding.pry
+    # binding.pry
+    projz = projs#.select {|proj| proj.exact_pledge_deadline.day == t }
+    # binding.pry
     SubscriberMailer.daily_email(@subscriber, projz).deliver
     redirect_to subscribers_path, :status => 301
   end
