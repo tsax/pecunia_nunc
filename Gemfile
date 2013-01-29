@@ -10,7 +10,10 @@ group :development do
 	gem 'pry-debugger'
 end
 
-gem 'kickstarter','~> 0.0.3'#, :path => 'vendor/plugins/kickstarter'
+gem 'kickstarter',:git => 'git://github.com/tsax/kickstarter.git'
+
+
+#, :path => 'vendor/plugins/kickstarter'
 
 # Gems used only for assets and not required
 # in production environments by default.
