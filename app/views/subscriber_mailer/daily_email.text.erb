@@ -5,7 +5,7 @@
 This is your daily email, as you requested!
 
 <% @p.each do |project| %>
-	<%= project.name %>
+	<%= "#{project.name}	#{project.pledge_deadline}" %>
 <% end %>
 
 Thanks

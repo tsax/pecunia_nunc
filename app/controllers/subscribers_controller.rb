@@ -26,12 +26,9 @@ class SubscribersController < ApplicationController
   def send_email
     @subscriber = Subscriber.find(params[:id])
     projects = Kickstarter.by_list(:ending_soon, :pages => 3)
-    t = Time.now.day 
-    projs = projects.select {|proj| proj.pledge_percent > 90.0 }
+    projs = projects.select { |proj| proj.pledge_percent > 90.0 and proj.pledge_deadline.day == Time.now.day }
     # binding.pry
-    projz = projs#.select {|proj| proj.exact_pledge_deadline.day == t }
-    # binding.pry
-    SubscriberMailer.daily_email(@subscriber, projz).deliver
+    SubscriberMailer.daily_email(@subscriber, projs).deliver
     redirect_to subscribers_path, :status => 301
   end
 

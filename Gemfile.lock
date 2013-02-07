@@ -1,5 +1,6 @@
-PATH
-  remote: vendor/gems/kickstarter
+GIT
+  remote: https://github.com/tsax/kickstarter.git
+  revision: 4066f9b7c2a137541e8604653775e8dbd85496e7
   specs:
     kickstarter (0.0.3)
       nokogiri
@@ -132,7 +133,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails
-  kickstarter (~> 0.0.3)!
+  kickstarter!
   pg (= 0.12.2)
   pry
   pry-debugger
