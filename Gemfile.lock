@@ -80,6 +80,9 @@ GEM
     pry-debugger (0.2.1)
       debugger (~> 1.2.0)
       pry (~> 0.9.10)
+    pry-remote (0.1.6)
+      pry (~> 0.9)
+      slop (~> 3.0)
     rack (1.4.3)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -137,6 +140,7 @@ DEPENDENCIES
   pg (= 0.12.2)
   pry
   pry-debugger
+  pry-remote
   rails (= 3.2.11)
   sass-rails (~> 3.2.3)
   sqlite3

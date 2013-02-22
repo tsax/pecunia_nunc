@@ -8,6 +8,7 @@ group :development do
 	gem 'sqlite3'	
 	gem 'pry'
 	gem 'pry-debugger'
+	gem 'pry-remote'
 end
 
 gem 'kickstarter', :git => 'https://github.com/tsax/kickstarter.git'
