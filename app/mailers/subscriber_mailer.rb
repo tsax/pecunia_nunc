@@ -1,7 +1,7 @@
 require 'kickstarter'
 
 class SubscriberMailer < ActionMailer::Base
-  default from: "tsaxena86@gmail.com"
+  default from: "pecunia-nunc@tusharsaxena.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
